@@ -1,55 +1,24 @@
-// Assignment Code
 
-// Write password to the #password input
-// function randomPwd() {
-//   var password = randomPwd();
-//   var passwordText = document.querySelector("#password");
-//   passwordText.value = password;
-  // result = document.getElementById("result");
-// }
+generate = document.getElementById("generate")
+generate.addEventListener("click",generatePwd);
 
-
-// Add event listener to generate button
-//generateBtn.addEventListener("click", randomPwd());
-
-// function randomPwd(){
-//   for (var i = 0; i < pwdLength; i++){
-//     result += char.charAt(Math.floor(Math.random() * char.length)); 
-//   }
-// }
-
-
-
-  result = document.getElementById("password");
   var char =  "abcdefghijklmnopqrstuvwxyz";
   var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYYZ";
   var special = "!#$%&()*+-./:;<=>?@[]^_{|{}`~";
   var num = "0123456789";
-  // var pwdLength = prompt("How many characters?");
-  // var upperChar = confirm("Upper case characters?");
-  // var specialChar = confirm("Special characters?");
-  // var numChar = confirm("Number characters?");
-  var result = "";
-
-
-  // if (upperChar === true){
-  //   char = char.concat(upper);
-  // }
-  // if (specialChar === true){
-  //   char = char.concat(special); 
-  // }
-  // if (numChar === true){
-  //   char = char.concat(num); 
-  // }
-  
-  // randomPwd();
-  
+  var password = "";
 
   function randomPwd(){
     var pwdLength = prompt("How many characters?");
     var upperChar = confirm("Upper case characters?");
     var specialChar = confirm("Special characters?");
     var numChar = confirm("Number characters?");
+    if (pwdLength < 8){
+      pwdLength = 8;
+    }
+    if (pwdLength > 128){
+      pwdLength = 128;
+    }
     if (upperChar === true){
       char = char.concat(upper);
     }
@@ -60,12 +29,18 @@
       char = char.concat(num); 
     }
     for (var i = 0; i < pwdLength; i++){
-      result += char.charAt(Math.floor(Math.random() * char.length)); 
-      
+      password += char.charAt(Math.floor(Math.random() * char.length));
     }
-    console.log(char);
-  console.log(result);
   }
+  
+  generate = document.getElementById("generate")
+  generate.addEventListener("click",generatePwd);
+
+  function generatePwd(){
+    password= ""
+    randomPwd();
+    alert(password);
+    }
   
  
   
