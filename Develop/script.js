@@ -32,22 +32,26 @@ generate.addEventListener("click",generatePwd);
       password += char.charAt(Math.floor(Math.random() * char.length));
     }
   }
-  
+
   function generatePwd(){
-    password= "" ; 
-    randomPwd();
+    password= "" ;
+    randomPwd() ;
     //document.getElementById("password").placeholder = password;
     document.getElementById("password").value = password ;
-    navigator.clipboard.writeText(password);
+    copyPwd();
     }
-
-  
- 
     // function copyText(password) {
     //   navigator.clipboard.writeText(password);
-    // }
+    // } 
+    
 
   
+    function copyPwd(){
+    password = document.getElementById("password");
+    password.select();
+    document.execCommand('copy');
+    alert("you copied it");
+  }
     
 
 
