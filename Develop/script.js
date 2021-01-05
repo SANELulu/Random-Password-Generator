@@ -36,7 +36,6 @@ generate.addEventListener("click",generatePwd);
   function generatePwd(){
     password= "" ;
     randomPwd() ;
-    //document.getElementById("password").placeholder = password;
     document.getElementById("password").value = password ;
     copyPwd();
     }
@@ -50,7 +49,7 @@ generate.addEventListener("click",generatePwd);
     password = document.getElementById("password");
     password.select();
     document.execCommand('copy');
-    alert("you copied it");
+    alert("Password copied!");
   }
     
 
