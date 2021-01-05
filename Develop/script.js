@@ -1,5 +1,5 @@
 
-generate = document.getElementById("generate")
+generate = document.getElementById("generate");
 generate.addEventListener("click",generatePwd);
 
   var char =  "abcdefghijklmnopqrstuvwxyz";
@@ -33,17 +33,19 @@ generate.addEventListener("click",generatePwd);
     }
   }
   
-  generate = document.getElementById("generate")
-  generate.addEventListener("click",generatePwd);
-
   function generatePwd(){
-    password= ""
+    password= "" ; 
     randomPwd();
-    alert(password);
+    //document.getElementById("password").placeholder = password;
+    document.getElementById("password").value = password ;
+    navigator.clipboard.writeText(password);
     }
+
   
  
-  
+    // function copyText(password) {
+    //   navigator.clipboard.writeText(password);
+    // }
 
   
     
@@ -66,5 +68,3 @@ generate.addEventListener("click",generatePwd);
 
 
   
-
-
