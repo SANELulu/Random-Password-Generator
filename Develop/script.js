@@ -8,6 +8,9 @@ generate.addEventListener("click",generatePwd);
   var num = "0123456789";
   var password = "";
 
+  //random password function will add characters to the var char if user selects at propts. 
+  //after the prompts are selected, the random password for loop will run until its the user's chosen
+  //length
   function randomPwd(){
     var pwdLength = prompt("How many characters?");
     var upperChar = confirm("Upper case characters?");
@@ -32,6 +35,7 @@ generate.addEventListener("click",generatePwd);
       password += char.charAt(Math.floor(Math.random() * char.length));
     }
   }
+//password is made '' every time function is ran to let the user use the app multiple times
 
   function generatePwd(){
     password= "" ;
@@ -39,13 +43,9 @@ generate.addEventListener("click",generatePwd);
     document.getElementById("password").value = password ;
     copyPwd();
     }
-    // function copyText(password) {
-    //   navigator.clipboard.writeText(password);
-    // } 
     
-
-  
-    function copyPwd(){
+//password will be automatically copied onto user's clipboard after running generatePwd()
+  function copyPwd(){
     password = document.getElementById("password");
     password.select();
     document.execCommand('copy');
